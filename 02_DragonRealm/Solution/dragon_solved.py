@@ -3,17 +3,23 @@ import time
 
 #A method to display the intro text
 def displayIntro():
+    print('''You are in a land full of dragons. In front of you,
+you see two caves. In one cave, the dragon is friendly
+and will share his treasure with you. The other dragon
+is greedy an hungry, an will eat you on sight.''')
     print()
 
-
-#Asking user to choose cave 1 or 2 and return a sting with '1' or '2'
+#Asking user to choose cave 1 or 2
 def chooseCave():
     cave = ''
-    
+    while cave != '1' and cave != '2':
+        print('Which cave will you go into? (1 or 2)')
+        cave = input()
+
     return cave
 
 #Checking if the cave 
-def checkCave(caveNumber):
+def checkCave(chosenCave):
     print('You approach the cave...')
     time.sleep(2)
     print('It is dark and spooky...')
@@ -22,9 +28,12 @@ def checkCave(caveNumber):
     print()
     time.sleep(2)
 
-    #determine if 1 or 2 is the "friendly" Cave
+    friendlyCave = random.randint(1,2)
 
-    #Check if the user has chosen the right cave and create an output
+    if chosenCave == str(friendlyCave):
+        print('Gives you his treasure!')
+    else:
+        print('Gobbles you down in one bite!')
 
 #Game Loop
 playAgain = 'yes'
