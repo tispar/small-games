@@ -1,20 +1,22 @@
-import random
-print('I will flip a coin 1000 times. Guess how many times it will come up heads. (Press enter to begin)')
-input()
-flips = 0
-heads = 0
-while flips < 1000:
-    if random.randint(0,1) == 1:
-        heads = heads + 1
-    flips = flips + 1
+#import random
 
-    if flips == 900:
-        print('900 flips and there have been ' + str(heads) + ' heads.')
-    if flips == 100:
-        print('100 flips and there have been ' + str(heads) + ' heads.')
-    if flips == 500:
-        print('500 flips and there have been ' + str(heads) + ' heads.')
+
+#Print out string asking the player his guess of 1000 throws and ask for an input to start the game
+
+#Take input
+
+#declare variables
+
+#while loop 
+
+    #determine result of coinflip and count if heads
+    
+    #increase number of flips
+    
+
+    #print interim results
+    
 
 print()
-print('Out of 1000 coin tosses, heads came up ' + str(heads) + ' times.')
+#print number of "heads" after 1000 throws
 print('Were you close?')
