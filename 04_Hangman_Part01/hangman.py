@@ -1,4 +1,48 @@
 import random
+# Program flow chart
+#                 +---------+
+#                 |         |
+#                 |  START  <---------------------------------+
+#                 |         |                                 |
+#                 +----+----+                                 |
+#                      |                                      |
+#              +-------v--------+                             |
+#              |                |                             |
+#       +------> Chooses a word |                             |
+#       |      |                |                             |
+#       |      +-------+--------+                             |
+#       |              |                                      |
+#       |      +-------v--------+       +--------------+      |
+#       |      |                +------->              |      |
+#       |      | Ask Player to  |       |Player already|      |
+#       |      | guess a letter |       |guessed this  |      |
+#       |      |                <-------+   letter     |      |
+#       |      +----+--------+--+       +--------------+      |
+#       |           |        |                                |
+#+------+--------+  |        |  +---------------+             |
+#|  Word does    <--+        +--> Word does not |             |
+#|contain letter |              |contain letter |             |
+#+------+--------+              +-------+-------+             |
+#       |                               |                     |
+#       |                               |                     |
+#+------v--------+              +-------v---------+           |
+#| Word complete |              |All guesses taken|           |
+#|  Player wins  |              |  Player loses   |           |
+#+------+--------+              +-------+---------+           |
+#       |                               |                     |
+#       |        +--------------+       |                     |
+#       |        |Ask Player if |       |                     |
+#       +-------->he/she wants  <-------+                     |
+#                |to play again |                             |
+#                +-----+--------+-----------------------------+
+#                      |
+#                   +--v----+
+#                   |       |
+#                   |  END  |
+#                   |       |
+#                   +-------+
+
+#List containing the hangman pics
 HANGMAN_PICS = ['''
  +---+
      |
@@ -35,6 +79,8 @@ HANGMAN_PICS = ['''
 /|\  |
 / \  |
     ===''']
+
+#list of possible words, feel free to add more animals
 words = 'ant baboon badger bat bear beaver camel cat clam cobra cougar coyote crow deer dog donkey duck eagle ferret fox frog goat goose hawk lion lizard llama mole monkey moose mouse mule newt otter owl panda parrot pidgeon python rabbit ram rat raven rhino salmon seal shark sheep skunk sloth snake spider stork swan tiger toad trout turkey turtle weasel whale wolf wombat zebra'.split()
 
 def getRandomWord(wordList):
@@ -81,7 +127,7 @@ def playAgain():
     print('Do you want to play again? (yes or no)')
     return input().lower().startswith('y')
 
-
+#Initialize game
 print('H A N G M A N')
 missedLetters = ''
 correctLetters = ''
@@ -89,6 +135,7 @@ secretWord = getRandomWord(words)
 gameIsDone = False
 
 while True:
+    #your primary gameplay loop
     displayBoard(missedLetters, correctLetters, secretWord)
 
     #Lässt den Spieler einen Buchstaben eingeben.
