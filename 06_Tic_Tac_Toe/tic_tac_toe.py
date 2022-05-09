@@ -14,9 +14,15 @@ def displayBoard(board):
 # Asks the player which cell he wants to fill out, checks is cell is available
 def getInput(board,counter):
 
-    #TODO what happens when user enters sth else than 1-9 ?
-    print("Please choose a cell (1-9)")
-    cell = int(input())
+    #Handle user Input
+    while True:
+        print("Please choose a cell (1-9)")
+        cell = input()
+        if cell not in "1 2 3 4 5 6 7 8 9".split():
+            print("Please enter a number between 1 and 9")
+        else:
+            cell = int(cell)
+            break
 
     if board[cell-1] == cell:
         if counter % 2 != 0: 
