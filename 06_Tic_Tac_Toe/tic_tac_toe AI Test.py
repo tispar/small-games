@@ -50,6 +50,7 @@ def winner(board,counter):
     else: 
         return False
 
+#Super secret AI
 def inputMachine(board):
     while True:
         move = rd.randint(1,9)
@@ -61,6 +62,7 @@ def inputMachine(board):
         else:
             print("thinking...")
 
+#Even more super secret AI
 def inputSkynet(board):
     winList = ['O','O']
     #TODO Check board for winning moves
@@ -76,6 +78,7 @@ def inputSkynet(board):
     else:
         inputMachine(board)
 
+#Checks if a win is in reach
 def winPossible(board):
     chunk = []
     winList = ['O','O']
@@ -116,6 +119,7 @@ if __name__ == "__main__":
     
     # Start a new round of Tic-tac-toe
     while True:
+        print("")
         print("Tic Tac Toe - Main Menu")
         print("")
         print("1 - Human vs Human")
