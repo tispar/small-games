@@ -120,14 +120,14 @@ if __name__ == "__main__":
         print("")
         print("1 - Human vs Human")
         print("2 - Human vs Machine")
-        print("3 - Human vs Skynet")
+        print("3 - Human vs Skynet (Does not work. ... yet :)")
         print("4 - Exit")
         print("")
         while True:
             print("Please choose an option")
             i = input()
-            if i not in "1 2 3".split():
-                print("Please enter a number between 1 and 9")
+            if i not in "1 2 3 4".split():
+                print("Please enter a number between 1 and 4")
             else:
                 i= int(i)
                 break
